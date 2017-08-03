@@ -11,17 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/index','ProjectController@index' )->middleware('auth');;
-Route::get('/add_project','ProjectController@create' )->middleware('auth');;
+Route::get('/','ProjectController@index' )->middleware('auth');
+Route::get('/index','ProjectController@index' )->middleware('auth');
+Route::get('/add_project','ProjectController@create' )->middleware('auth');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/storeform','ProjectController@store' )->middleware('auth');;
+Route::get('/storeform','ProjectController@store' )->middleware('auth');
 Route::post('/storeform','ProjectController@store' )->middleware('auth');
 
 

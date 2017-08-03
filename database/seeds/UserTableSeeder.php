@@ -15,7 +15,7 @@ class UserTableSeeder extends Seeder
         DB::table('users')->delete();
 	    User::create(array(
 	        'name'     => 'Irfan Shah',
-	        'email'    => 'irfan.shah@purelogics.net',
+	        'email'    => 'mick@ezequote.com.au',
 	        'password' => Hash::make('purelogics'),
 	    ));
     }

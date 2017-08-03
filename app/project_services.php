@@ -10,7 +10,5 @@ class project_services extends Model
 	
 
 	public $timestamps = true;
-        // public function project_services(){
-    //	return $this->belongsTo('App\projects','id','project_idFK');
-//}
+       
 }

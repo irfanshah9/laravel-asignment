@@ -12,8 +12,15 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
- <a href="add_project" ><button  type="button" class="btn default">Create Project</button></a>
-                          
+ <a href="add_project" ><button  type="button" class="btn default">Create New Project</button></a>
+        <div class="flash-message">
+    @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+      @if(Session::has('alert-' . $msg))
+
+      <p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }} <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></p>
+      @endif
+    @endforeach
+  </div>                   
 <div class="container">
   <h2>All Projects</h2>
   <p>All projects are showing here in table</p>            
