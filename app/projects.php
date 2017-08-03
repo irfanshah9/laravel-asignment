@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class projects extends Model
 {
-     protected $table = 'project_services';
+     protected $table = 'projects';
 
 	public $timestamps = true;
 	
-	public function project_services	(){
-    	return $this->belongsTo('App\project_services','project_idFK','id');
+	public function project_service	(){
+    	return $this->hasMany('App\project_services','project_idFK','id');
     }
 }

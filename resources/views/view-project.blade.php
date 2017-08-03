@@ -12,7 +12,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-
+ <a href="add_project" ><button  type="button" class="btn default">Create Project</button></a>
+                          
 <div class="container">
   <h2>All Projects</h2>
   <p>All projects are showing here in table</p>            
@@ -27,16 +28,28 @@
       </tr>
     </thead>
     <tbody>
-	 @foreach ($project_data as $projects)
+	@foreach ($project_data as $projects)
+	
 	 
+	
       <tr>
         <td>{{$projects['name']}}</td>
-        <td>Doe</td>
-		<td>Doe</td>
-		<td>Doe</td>
-        <td>john@example.com</td>
-      </tr>
+        <td>{{$projects['type']}}</td>
+		<td>
+		@foreach ($projects["project_service"] as $service)
+	    <?php
+	    $temp="";
+			$services=$temp.",".$service["services"];
+	    ?>
+	   {{$services}} 
 	   @endforeach
+	</td>
+		<td>{{$projects['comments']}}</td>
+        <td>{{$projects['terms']}}</td>
+      </tr>
+	  
+	  
+	    @endforeach
     </tbody>
   </table>
 </div>

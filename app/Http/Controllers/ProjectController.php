@@ -25,8 +25,8 @@ class ProjectController extends Controller
     public function index()
     {
 		 $project_data = projects::
-                with('project_services')
-                ->get();
+                with('project_service')
+                ->get()->toArray();
 	
           return view('view-project',compact('project_data'));
     }

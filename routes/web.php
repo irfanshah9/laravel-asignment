@@ -22,6 +22,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/storeform','ProjectController@store' )->middleware('auth');;
-Route::post('/storeform','ProjectController@store' )->middleware('auth');;
+Route::post('/storeform','ProjectController@store' )->middleware('auth');
+
+
+
 
 
