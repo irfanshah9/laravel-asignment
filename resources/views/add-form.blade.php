@@ -13,7 +13,7 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.9.3/js/bootstrap-select.min.js"></script>
-
+ <a href="index" ><button  type="button" class="btn default">View All Projects</button></a>
   <div class="portlet light portlet-fit portlet-form bordered">
             <div class="portlet-title">
 				<h2 class="text-center text-primary">Add New Project</h2><br>
@@ -48,10 +48,11 @@
                             </label>
                             <div class="col-md-4">
                                 <select name="p_type" id="staff_role" class="selectpicker form-contro">
+
 								<option value="">Select Type</option>
-                                    <option value="Residential">Residential</option>
-									 <option value="Commercial">Commercial</option>
-									  <option value="Other">Other</option>
+                                    <option value="Residential"  @if(old('p_type') == 'Residential') {{ 'selected' }} @endif>Residential</option>
+									 <option value="Commercial" @if(old('p_type') == 'Commercial') {{ 'selected' }} @endif>Commercial</option>
+									  <option value="Other" @if(old('p_type') == 'Other') {{ 'selected' }} @endif>Other</option>
 									  
                                     
 
@@ -74,28 +75,28 @@
                                 <div class="checkbox-list" data-error-container="#module_error">
                                     <div>
                                         <label>
-                                            <input type="checkbox" value="Detailing" id="" name="serives[]" /> Detailing </label>
+                                            <input type="checkbox" value="Detailing" id="" @if (old('serives')) checked="checked" @endif name="serives[]" /> Detailing </label>
                                     </div>
                                     <div>
                                         <label>
-                                            <input type="checkbox" class="modules" value="Estimation" id="module1" name="serives[]"  /> Estimation </label>
+                                            <input type="checkbox" class="modules" value="Estimation" @if (old('serives')) checked="checked" @endif id="module1" name="serives[]"  /> Estimation </label>
                                     </div>
                                    
                                     <div>
                                         <label>
-                                            <input type="checkbox" class="modules" value="Design" id="module3" name="serives[]"  /> Design </label>
+                                            <input type="checkbox" class="modules" value="Design" @if (old('serives')) checked="checked" @endif id="module3" name="serives[]"  /> Design </label>
                                     </div>
                                     <div>
                                         <label>
-                                            <input type="checkbox" class="modules" value="Construction" id="module4" name="serives[]"  /> Construction </label>
+                                            <input type="checkbox" class="modules" value="Construction" @if (old('serives')) checked="checked" @endif id="module4" name="serives[]"  /> Construction </label>
                                     </div>
                                     <div>
                                         <label>
-                                            <input type="checkbox" class="modules" value="Review" id="module5" name="serives[]"  /> Review </label>
+                                            <input type="checkbox" class="modules" value="Review" @if (old('serives')) checked="checked" @endif id="module5" name="serives[]"  /> Review </label>
                                     </div>
                                     <div>
                                         <label>
-                                            <input type="checkbox" class="modules" value="Inspection" id="module6" name="serives[]" /> Inspection </label>
+                                            <input type="checkbox" class="modules" value="Inspection" @if (old('serives')) checked="checked" @endif id="module6" name="serives[]" /> Inspection </label>
                                     </div>
                                  </div>
 								 
@@ -133,7 +134,7 @@
                             <div class="col-md-5">
                                 <div class="checkbox-list" data-error-container="#module_error">
                                    
-                                         <label>   <input type="checkbox" value="Agree" id="" name="p_term" /> I Agree </label>
+                                         <label>   <input type="checkbox" value="Agree" id="" @if (old('p_term')) checked="checked" @endif name="p_term" /> I Agree </label>
                                    
                               </div>
                                 <div id="module_error"> </div>
