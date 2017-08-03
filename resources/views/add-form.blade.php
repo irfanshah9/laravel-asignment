@@ -41,9 +41,7 @@
                                 @endif
                            
                             </div>
-							
-                              
-                        </div>
+						 </div>
 						<div class="form-group">
                             <label class="control-label col-md-3">Project Type
                                 <span class="required"> * </span>
